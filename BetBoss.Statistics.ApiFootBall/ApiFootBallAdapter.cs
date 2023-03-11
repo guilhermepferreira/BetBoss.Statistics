@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BetBoss.Statistics.ApiFootBall.Clients;
+using BetBoss.Statistics.ApiFootBall.Clients.Params;
 using BetBoss.Statistics.Domain.Adapters;
 using BetBoss.Statistics.Domain.Models;
 
@@ -36,11 +37,16 @@ namespace BetBoss.Statistics.ApiFootBall
             }
         }
 
-        public async Task<LeagueResult> GetLeagues()
+        public async Task<LeagueResult> GetLeaguesBySeason(int season)
         {
             try
             {
-                var leagueGetResult = await footeballApi.GetAllLeagues();
+                var seasonGet = new SeasonGet 
+                { 
+                    season = season
+                };
+
+                var leagueGetResult = await footeballApi.GetAllLeaguesBySeason(seasonGet);
 
                 var leagueResult = mapper.Map<LeagueResult>(leagueGetResult);
 

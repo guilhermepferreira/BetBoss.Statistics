@@ -1,4 +1,5 @@
-﻿using Refit;
+﻿using BetBoss.Statistics.ApiFootBall.Clients.Params;
+using Refit;
 using System.Threading.Tasks;
 
 namespace BetBoss.Statistics.ApiFootBall.Clients
@@ -21,7 +22,8 @@ namespace BetBoss.Statistics.ApiFootBall.Clients
         /// Busca todas as seasons.
         /// </summary>
         [Get("/v3/leagues")]
-        Task<LeagueGetResult> GetAllLeagues();
+        Task<LeagueGetResult> GetAllLeaguesBySeason(
+            [Query] SeasonGet seasonGet);
 
         /// <summary>
         /// Busca todas as seasons.

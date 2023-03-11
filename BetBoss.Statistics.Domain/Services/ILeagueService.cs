@@ -2,6 +2,6 @@
 {
     public interface ILeagueService
     {
-        Task GetAllLeagues();
+        Task GetAllLeagues(int season);
     }
 }

@@ -3,8 +3,9 @@
     public class SeasonDto
     {
         public int? Year { get; set; }
-        public string? Date { get; set; }
-        public string? End { get; set; }
+        public DateOnly? Start { get; set; }
+        public DateOnly? End { get; set; }
         public bool? Current { get; set; }
+        public CoverageDto Coverage { get; set; }
     }
 }
