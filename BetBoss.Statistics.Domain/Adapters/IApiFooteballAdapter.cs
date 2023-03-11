@@ -5,5 +5,7 @@ namespace BetBoss.Statistics.Domain.Adapters
     public interface IApiFooteballAdapter
     {
         Task<CountryResult> GetCountries();
+        Task<LeagueResult> GetLeagues();
+        Task<SeasonResult> GetSeasons();
     }
 }

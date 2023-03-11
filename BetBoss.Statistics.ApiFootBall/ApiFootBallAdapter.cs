@@ -35,5 +35,37 @@ namespace BetBoss.Statistics.ApiFootBall
                 throw e;
             }
         }
+
+        public async Task<LeagueResult> GetLeagues()
+        {
+            try
+            {
+                var leagueGetResult = await footeballApi.GetAllLeagues();
+
+                var leagueResult = mapper.Map<LeagueResult>(leagueGetResult);
+
+                return leagueResult;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public async Task<SeasonResult> GetSeasons()
+        {
+            try
+            {
+                var seasonGetResult = await footeballApi.GetAllSeasons();
+
+                var seasonResult = mapper.Map<SeasonResult>(seasonGetResult);
+
+                return seasonResult;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

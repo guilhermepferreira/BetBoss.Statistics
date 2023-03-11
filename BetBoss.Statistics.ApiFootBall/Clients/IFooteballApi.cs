@@ -8,8 +8,8 @@ namespace BetBoss.Statistics.ApiFootBall.Clients
         /// <summary>
         /// Busca todas as seasons.
         /// </summary>
-        //[Get("/v3/leagues/seasons")]
-        //Task<SeasonsGetResult> GetAllSeasons();
+        [Get("/v3/leagues/seasons")]
+        Task<SeasonGetResult> GetAllSeasons();
 
         /// <summary>
         /// Busca todas as seasons.
@@ -20,9 +20,8 @@ namespace BetBoss.Statistics.ApiFootBall.Clients
         /// <summary>
         /// Busca todas as seasons.
         /// </summary>
-        //[Get("/v3/leagues")]
-        //Task<SeasonLeaguesGetResult> GetAllLeaguesBySeason(
-        //    [Query] SeasonLeaguesGet seasonLeaguesGet);
+        [Get("/v3/leagues")]
+        Task<LeagueGetResult> GetAllLeagues();
 
         /// <summary>
         /// Busca todas as seasons.

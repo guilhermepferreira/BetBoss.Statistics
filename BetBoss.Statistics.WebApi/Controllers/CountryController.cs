@@ -22,35 +22,21 @@ namespace BetBoss.Statistics.WebApi.Controllers
                 throw new ArgumentNullException(nameof(coutryService));
         }
 
-        [ApiVersion("1.0")]
-
-        /// <summary>
-        ///    Busca todas as seasons.
-        /// </summary>
-        /// <response code="200">
-        ///    Seasons retornadas.
-        /// </response>
-        /// <response code="400">
-        ///     Parametros incorretos ou limite de utilização excedido.
-        /// </response>
-        /// <response code="500">
-        ///     Erro interno.
-        /// </response>
-        [HttpGet("Countries"), AllowAnonymous]
+        [HttpGet("Country"), AllowAnonymous]
         public async Task<IActionResult> GetAllCountries()
         {
             await coutryService.GetContries();
             return Ok();
         }
 
-        [HttpGet("Countries/{id}"), AllowAnonymous]
+        [HttpGet("Country/{id}"), AllowAnonymous]
         public async Task<Country> GetCountryById(int id)
         {
             var country = await coutryService.GetCoutryById(id);
             return country;
         }
 
-        [HttpPost("Countries/{name}"), AllowAnonymous]
+        [HttpPost("Country/{name}"), AllowAnonymous]
         public async Task<Country> GetCountryByName(string name)
         {
             var country = await coutryService.GetCoutryByName(name);

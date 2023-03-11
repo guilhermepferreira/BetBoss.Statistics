@@ -18,6 +18,8 @@ namespace BetBoss.Statistics.Application.Dependency
             }
 
             services.AddScoped<ICoutryService, CountryService>();
+            services.AddScoped<ISeasonService, SeasonService>();
+            services.AddScoped<ILeagueService, LeagueService>();
 
             return services;
         }
