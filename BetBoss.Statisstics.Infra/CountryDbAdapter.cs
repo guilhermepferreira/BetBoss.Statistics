@@ -15,6 +15,14 @@ namespace BetBoss.Statisstics.Infra
                 throw new ArgumentNullException(nameof(connection));
         }
 
+        public async Task<IEnumerable<Country>> GetAllDbCountries()
+        {
+            return await connection.QueryAsync<Country>(@"
+                SELECT
+                    Id,Name,Code,Flag
+                FROM Country");
+        }
+
         public async Task<Country> GetCoutryById(int id)
         {
             return await connection.QueryFirstOrDefaultAsync<Country>(@"

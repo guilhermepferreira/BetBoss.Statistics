@@ -1,4 +1,5 @@
 ﻿using BetBoss.Statistics.Domain.Adapters;
+using BetBoss.Statistics.Domain.Models;
 using BetBoss.Statistics.Domain.Services;
 
 namespace BetBoss.Statistics.Application
@@ -15,6 +16,11 @@ namespace BetBoss.Statistics.Application
 
             this.apiFooteballAdapter = apiFooteballAdapter ??
                 throw new ArgumentNullException(nameof(apiFooteballAdapter));
+        }
+
+        public Task<SeasonBase> GetSeasonByYear(int year)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task GetSeasons()

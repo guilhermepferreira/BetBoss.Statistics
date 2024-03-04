@@ -26,6 +26,7 @@ namespace BetBoss.Statisstics.Infra.Dependency
 
             services.AddScoped<IContryDbAdapter, CountryDbAdapter>();
             services.AddScoped<ISeasonDbAdapter, SeasonDbAdapter>();
+            services.AddScoped<ILeagueDbAdapter, LeagueDbAdapter>();
 
             return services;
         }

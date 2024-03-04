@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using BetBoss.Statistics.Application.Dependency;
 using BetBoss.Statisstics.Infra.Dependency;
 using BetBoss.Statisstics.Infra;
+using MassTransit;
+using BetBoss.Statistics.Domain.SagaModels;
+using BetBoss.Statistics.Application;
 
 namespace BetBoss.Statistics.WebApi
 {
@@ -31,8 +34,6 @@ namespace BetBoss.Statistics.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SeuProjeto.API", Version = "v1" });
             });
 
-            services.AddApplication();
-
             services.AddInfra(new DataBaseAdapterConfiguration
             {
                 SqlConnectionString = Configuration["DataBaseAdapterConfiguration:SqlConnectionString"]
@@ -46,8 +47,8 @@ namespace BetBoss.Statistics.WebApi
             });
 
             // Adicionar as dependências necessárias para a arquitetura hexagonal
+            services.AddApplication();
 
-            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

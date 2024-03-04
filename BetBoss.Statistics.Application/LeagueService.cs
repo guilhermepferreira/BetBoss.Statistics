@@ -9,12 +9,12 @@ namespace BetBoss.Statistics.Application
         private readonly IApiFooteballAdapter apiFooteballAdapter;
         private readonly ILeagueDbAdapter leagueDbAdapter;
         private readonly ISeasonService seasonService;
-        private readonly ICoutryService coutryService;
+        private readonly ICountryService coutryService;
 
         public LeagueService(IApiFooteballAdapter apiFooteballAdapter, 
             ILeagueDbAdapter leagueDbAdapter, 
             ISeasonService seasonService, 
-            ICoutryService coutryService)
+            ICountryService coutryService)
         {
             this.apiFooteballAdapter = apiFooteballAdapter ??
                 throw new ArgumentNullException(nameof(apiFooteballAdapter));
@@ -28,7 +28,13 @@ namespace BetBoss.Statistics.Application
             this.coutryService = coutryService ??
                 throw new ArgumentNullException(nameof(coutryService));
         }
-        public async Task GetAllLeagues(int season)
+
+        public Task GetAllLeagues()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task GetAllLeaguesBySeason(int season)
         {
             var leagues = await apiFooteballAdapter.GetLeaguesBySeason(season);
 

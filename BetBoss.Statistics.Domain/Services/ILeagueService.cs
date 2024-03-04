@@ -2,6 +2,7 @@
 {
     public interface ILeagueService
     {
-        Task GetAllLeagues(int season);
+        Task GetAllLeaguesBySeason(int season);
+        Task GetAllLeagues();
     }
 }
