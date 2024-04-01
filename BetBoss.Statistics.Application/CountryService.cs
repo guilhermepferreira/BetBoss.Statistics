@@ -30,7 +30,7 @@ namespace BetBoss.Statisstics.Application
         {
             var coutries = await apiFooteballAdapter.GetCountries();
 
-            await publishEndpoint.Publish<Saga<Country>>(
+            await publishEndpoint.Publish<DataReceived<Country>>(
                 new {
                     CorrelationId = Guid.NewGuid(),
                     Items = coutries.Countries,
@@ -85,6 +85,11 @@ namespace BetBoss.Statisstics.Application
 
             return true;
             
+        }
+
+        public async Task<int> InsertAndReturnInsertedId(Country country)
+        {
+            return await contryDbAdapter.InsertAndReturnInsertedId(country);
         }
     }
 }

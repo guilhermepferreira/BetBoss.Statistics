@@ -37,7 +37,7 @@ namespace BetBoss.Statistics.ApiFootBall
             }
         }
 
-        public async Task<LeagueResult> GetLeaguesBySeason(int season)
+        public async Task<IEnumerable<League>> GetLeaguesBySeason(int season)
         {
             try
             {
@@ -50,11 +50,11 @@ namespace BetBoss.Statistics.ApiFootBall
 
                 var leagueResult = mapper.Map<LeagueResult>(leagueGetResult);
 
-                return leagueResult;
+                return leagueResult.Leagues;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
 

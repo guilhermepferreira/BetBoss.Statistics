@@ -9,5 +9,6 @@ namespace BetBoss.Statistics.Domain.Factories
         ICountryService CreateCountryService();
         IContryDbAdapter CreateCountryDbAdapter();
         IPublishEndpoint CreatePublishEndpoint();
+        ILeagueService CreateLeagueService();
     }
 }

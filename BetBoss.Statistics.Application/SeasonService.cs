@@ -33,5 +33,16 @@ namespace BetBoss.Statistics.Application
             }
 
         }
+
+        public async Task InsertLeagueSeason(League league)
+        {
+            var leagueId = league.Id.Value;
+            var season = league.Seasons.FirstOrDefault();
+            var coverageId = season.Coverage.Id;
+            if(leagueId != 0 && coverageId != 0 && season != null)
+            {
+                await seasonDbAdapter.InsertLeagueSeason(season, leagueId, coverageId);
+            }
+        }
     }
 }

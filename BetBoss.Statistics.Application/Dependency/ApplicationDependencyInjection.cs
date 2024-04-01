@@ -1,4 +1,5 @@
 ﻿using BetBoss.Statisstics.Application;
+using BetBoss.Statistics.Application.SagaStatesMachines;
 using BetBoss.Statistics.Domain.Factories;
 using BetBoss.Statistics.Domain.Models;
 using BetBoss.Statistics.Domain.SagaModels;
@@ -27,6 +28,8 @@ namespace BetBoss.Statistics.Application.Dependency
             {
                 cfg.AddSagaStateMachine<CountrySagaStateMachine, Saga<Country>>()
                     .InMemoryRepository();
+                cfg.AddSagaStateMachine<LeagueSagaStateMachine, Saga<League>>()
+                    .InMemoryRepository();
 
                 cfg.UsingRabbitMq((context, config) =>
                 {
@@ -40,12 +43,18 @@ namespace BetBoss.Statistics.Application.Dependency
                     {
                         e.ConfigureSaga<Saga<Country>>(context);
                     });
+
+                    config.ReceiveEndpoint("league_queue", e =>
+                    {
+                        e.ConfigureSaga<Saga<League>>(context);
+                    });
                 });
 
                 cfg.AddRequestClient<ICountryService>();
             });
 
             services.AddScoped<ISagaRepository<Saga<Country>>, InMemorySagaRepository<Saga<Country>>>();
+            services.AddScoped<ISagaRepository<Saga<League>>, InMemorySagaRepository<Saga<League>>>();
 
             services.AddScoped<IPublishEndpoint>(provider => provider.GetRequiredService<IBusControl>());
 

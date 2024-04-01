@@ -41,6 +41,16 @@ namespace BetBoss.Statisstics.Infra
                 WHERE Name = @Name", new { name });
         }
 
+        public async Task<int> InsertAndReturnInsertedId(Country country)
+        {
+            string sqlQuery = @"
+                INSERT INTO Country (Name, Code, Flag) 
+                VALUES (@Name, @Code, @Flag);
+                SELECT CAST(SCOPE_IDENTITY() as int)";
+
+            return await connection.QuerySingleAsync<int>(sqlQuery, new { country.Name, country.Code, country.Flag });
+        }
+
         public async Task InsertCountry(Country country)
         {
             await connection.ExecuteAsync(@"

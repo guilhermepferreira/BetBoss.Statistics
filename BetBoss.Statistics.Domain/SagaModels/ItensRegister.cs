@@ -2,11 +2,7 @@
 
 namespace BetBoss.Statistics.Domain.SagaModels
 {
-    public class ItensRegister<T> : SagaStateMachineInstance
+    public class ItensRegister<T> : Saga<T>
     {
-        public Guid CorrelationId { get; set; }
-        public string CurrentState { get; set; }
-        public string TipoItem { get; set; }
-        public IEnumerable<T> Items { get; set; }
     }
 }

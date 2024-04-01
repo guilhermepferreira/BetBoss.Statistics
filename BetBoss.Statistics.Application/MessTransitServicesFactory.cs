@@ -1,14 +1,8 @@
-﻿using BetBoss.Statisstics.Application;
-using BetBoss.Statistics.Domain.Adapters;
+﻿using BetBoss.Statistics.Domain.Adapters;
 using BetBoss.Statistics.Domain.Factories;
 using BetBoss.Statistics.Domain.Services;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BetBoss.Statistics.Application
 {
@@ -34,6 +28,11 @@ namespace BetBoss.Statistics.Application
         public IPublishEndpoint CreatePublishEndpoint()
         {
             return this.scope.ServiceProvider.GetRequiredService<IPublishEndpoint>();
+        }
+
+        public ILeagueService CreateLeagueService()
+        {
+            return this.scope.ServiceProvider.GetRequiredService<ILeagueService>();
         }
     }
 }

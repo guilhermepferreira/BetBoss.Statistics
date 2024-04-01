@@ -9,6 +9,6 @@ namespace BetBoss.Statistics.Domain.Services
         Task<Country> GetCoutryByName(string name);
         Task<bool> NextStepIfHasNewCoutrines(IEnumerable<Country> apiCountries);
         Task InsertNewCountries(IEnumerable<Country> countries);
-
+        Task<int> InsertAndReturnInsertedId(Country country);
     }
 }

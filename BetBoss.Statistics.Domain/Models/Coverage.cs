@@ -2,6 +2,7 @@
 {
     public class Coverage
     {
+        public int Id { get; set; }
         public Fixtures? Fixtures { get; set; }
         public bool Standings { get; set; }
         public bool Players { get; set; }

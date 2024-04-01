@@ -4,6 +4,8 @@ namespace BetBoss.Statistics.Domain.Adapters
 {
     public interface ILeagueDbAdapter
     {
-        Task InsertLeague(League league);
+        Task<int> InsertLeague(League league);
+        Task<int> InsertLeagueCoverage(Coverage coverage);
+        Task<IEnumerable<League>> GetAllDbLeagues();
     }
 }

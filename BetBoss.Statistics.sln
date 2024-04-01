@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statistics.Domain", "BetBoss.Statistics.Domain\BetBoss.Statistics.Domain.csproj", "{AB629BDA-B531-415B-9133-44899CBC2C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetBoss.Statistics.Domain", "BetBoss.Statistics.Domain\BetBoss.Statistics.Domain.csproj", "{AB629BDA-B531-415B-9133-44899CBC2C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statistics.Application", "BetBoss.Statistics.Application\BetBoss.Statistics.Application.csproj", "{8AE55A63-AE72-4BE9-860B-D57A62052DA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetBoss.Statistics.Application", "BetBoss.Statistics.Application\BetBoss.Statistics.Application.csproj", "{8AE55A63-AE72-4BE9-860B-D57A62052DA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statisstics.Infra", "BetBoss.Statisstics.Infra\BetBoss.Statisstics.Infra.csproj", "{14671659-5982-47C7-8444-06B13C6D4FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetBoss.Statisstics.Infra", "BetBoss.Statisstics.Infra\BetBoss.Statisstics.Infra.csproj", "{14671659-5982-47C7-8444-06B13C6D4FDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statistics.WebApi", "BetBoss.Statistics.WebApi\BetBoss.Statistics.WebApi.csproj", "{563AE3E8-7D17-42DD-A59D-B708B19BA479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetBoss.Statistics.WebApi", "BetBoss.Statistics.WebApi\BetBoss.Statistics.WebApi.csproj", "{563AE3E8-7D17-42DD-A59D-B708B19BA479}"
 	ProjectSection(ProjectDependencies) = postProject
 		{14671659-5982-47C7-8444-06B13C6D4FDA} = {14671659-5982-47C7-8444-06B13C6D4FDA}
 		{31E6E605-8D28-4FE9-8488-C050DDF2D485} = {31E6E605-8D28-4FE9-8488-C050DDF2D485}
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statistics.WebApi",
 		{AB629BDA-B531-415B-9133-44899CBC2C74} = {AB629BDA-B531-415B-9133-44899CBC2C74}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBoss.Statistics.ApiFootBall", "BetBoss.Statistics.ApiFootBall\BetBoss.Statistics.ApiFootBall.csproj", "{31E6E605-8D28-4FE9-8488-C050DDF2D485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetBoss.Statistics.ApiFootBall", "BetBoss.Statistics.ApiFootBall\BetBoss.Statistics.ApiFootBall.csproj", "{31E6E605-8D28-4FE9-8488-C050DDF2D485}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{3B1CDF78-EAFB-4046-92D1-8C615EFB48A5}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0DB51BB1-AD9B-4333-A832-E7B39A7D1ABB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{635B63F4-4AC6-418D-A42F-345DB17E51BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetBos.Statistics.Tests", "BetBos.Statistics.Tests\BetBos.Statistics.Tests.csproj", "{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{31E6E605-8D28-4FE9-8488-C050DDF2D485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31E6E605-8D28-4FE9-8488-C050DDF2D485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31E6E605-8D28-4FE9-8488-C050DDF2D485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{14671659-5982-47C7-8444-06B13C6D4FDA} = {3B1CDF78-EAFB-4046-92D1-8C615EFB48A5}
 		{563AE3E8-7D17-42DD-A59D-B708B19BA479} = {635B63F4-4AC6-418D-A42F-345DB17E51BE}
 		{31E6E605-8D28-4FE9-8488-C050DDF2D485} = {3B1CDF78-EAFB-4046-92D1-8C615EFB48A5}
+		{C96ABC2E-54DB-441A-AC68-25ED6D44ED3D} = {2AEC1AFE-9244-4A56-98B7-139820899580}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79CE2C37-E9BE-4246-8B5B-BFF08DB10AC7}
