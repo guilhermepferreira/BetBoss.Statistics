@@ -11,10 +11,10 @@ namespace BetBoss.Statistics.WebApi.Controllers
     public class CountryController : Controller
     {
         private readonly IMapper mapper;
-        private readonly ICoutryService coutryService;
+        private readonly ICountryService coutryService;
 
         public CountryController(IMapper mapper,
-            ICoutryService coutryService)
+            ICountryService coutryService)
         {
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
 

@@ -14,11 +14,11 @@ namespace BetBoss.Statistics.ApiFootBall
 
             CreateMap<SeasonGetResult, SeasonResult>()
                 .ForMember(a => a.Seasons, o => o.MapFrom(s => s.Response));
-            
+          
             CreateMap<LeagueDto, League>()
-                .ForMember(a => a.IdApi, o => o.MapFrom(s=>s.League.IdApi))
+                .ForMember(a => a.IdApi, o => o.MapFrom(s=>s.League.id))
                 .ForMember(a => a.Name, o => o.MapFrom(s => s.League.Name))
-                .ForMember(a => a.Type.Type, o => o.MapFrom(s => s.League.Type))
+                .ForMember(a => a.Type, o => o.MapFrom(s => s.League.Type))
                 .ForMember(a => a.Logo, o => o.MapFrom(s => s.League.Logo));
 
 

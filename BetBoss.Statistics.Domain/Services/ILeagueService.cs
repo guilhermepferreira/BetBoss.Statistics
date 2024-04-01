@@ -1,7 +1,12 @@
-﻿namespace BetBoss.Statistics.Domain.Services
+﻿using BetBoss.Statistics.Domain.Models;
+
+namespace BetBoss.Statistics.Domain.Services
 {
     public interface ILeagueService
     {
-        Task GetAllLeagues(int season);
+        Task GetAllLeaguesBySeason(int season);
+        Task GetAllLeagues();
+        Task<IEnumerable<League>> GetAllDbLeagues();
+        Task InsertLeague(IEnumerable<League> leagues);
     }
 }

@@ -2,8 +2,8 @@
 {
     public class Season : SeasonBase
     {
-        public DateOnly? Start { get; set; }
-        public DateOnly? End { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? End { get; set; }
         public bool? Current { get; set; }
         public Coverage? Coverage { get; set; }
     }

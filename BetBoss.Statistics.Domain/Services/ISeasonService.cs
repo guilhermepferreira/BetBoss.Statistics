@@ -6,5 +6,6 @@ namespace BetBoss.Statistics.Domain.Services
     {
         Task GetSeasons();
         Task<SeasonBase> GetSeasonByYear(int year);
+        Task InsertLeagueSeason(League league);
     }
 }

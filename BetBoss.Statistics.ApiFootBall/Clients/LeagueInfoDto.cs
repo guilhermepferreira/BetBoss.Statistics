@@ -5,7 +5,7 @@ namespace BetBoss.Statistics.ApiFootBall.Clients
     public class LeagueInfoDto
     {
         [JsonProperty(PropertyName = "id")]
-        public int? IdApi { get; set; }
+        public int? id { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         public string? Name { get; set; }

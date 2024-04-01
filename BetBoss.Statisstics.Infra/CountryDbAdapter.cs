@@ -15,6 +15,14 @@ namespace BetBoss.Statisstics.Infra
                 throw new ArgumentNullException(nameof(connection));
         }
 
+        public async Task<IEnumerable<Country>> GetAllDbCountries()
+        {
+            return await connection.QueryAsync<Country>(@"
+                SELECT
+                    Id,Name,Code,Flag
+                FROM Country");
+        }
+
         public async Task<Country> GetCoutryById(int id)
         {
             return await connection.QueryFirstOrDefaultAsync<Country>(@"
@@ -31,6 +39,16 @@ namespace BetBoss.Statisstics.Infra
                     Id,Name,Code,Flag
                 FROM Country
                 WHERE Name = @Name", new { name });
+        }
+
+        public async Task<int> InsertAndReturnInsertedId(Country country)
+        {
+            string sqlQuery = @"
+                INSERT INTO Country (Name, Code, Flag) 
+                VALUES (@Name, @Code, @Flag);
+                SELECT CAST(SCOPE_IDENTITY() as int)";
+
+            return await connection.QuerySingleAsync<int>(sqlQuery, new { country.Name, country.Code, country.Flag });
         }
 
         public async Task InsertCountry(Country country)
